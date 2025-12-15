@@ -1,0 +1,5 @@
+<wsp:AppliesTo xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:ssp="urn:x-simplesamlphp:namespace" xmlns:wsa10="http://www.w3.org/2005/08/addressing" ssp:attr1="value1">
+  <wsa10:EndpointReference>
+    <wsa10:Address>http://www.fabrikam123.example.com/acct</wsa10:Address>
+  </wsa10:EndpointReference>
+</wsp:AppliesTo>

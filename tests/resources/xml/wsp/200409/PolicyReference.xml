@@ -1,0 +1,1 @@
+<wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:ssp="urn:x-simplesamlphp:namespace" URI="urn:x-simplesamlphp:phpunit" Digest="/CTj03d1DB5e2t7CTo9BEzCf5S9NRzwnBgZRlm32REI=" DigestAlgorithm="http://schemas.xmlsoap.org/ws/2004/09/policy/Sha1Exc" ssp:attr1="testval1"/>

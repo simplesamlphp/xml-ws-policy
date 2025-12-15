@@ -1,0 +1,4 @@
+<wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:ssp="urn:x-simplesamlphp:namespace">
+  <wsp:ExactlyOne />
+  <ssp:Chunk>Some</ssp:Chunk>
+</wsp:All>
