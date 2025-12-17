@@ -28,13 +28,13 @@ final class PolicyReference extends AbstractWspElement implements SchemaValidata
 
 
     /** The namespace-attribute for the xs:any element */
-    public const XS_ANY_ELT_NAMESPACE = NS::ANY;
+    public const string XS_ANY_ELT_NAMESPACE = NS::ANY;
 
     /** The namespace-attribute for the xs:anyAttribute element */
-    public const XS_ANY_ATTR_NAMESPACE = NS::ANY;
+    public const string XS_ANY_ATTR_NAMESPACE = NS::ANY;
 
     /** The exclusions for the xs:anyAttribute element */
-    public const XS_ANY_ATTR_EXCLUSIONS = [
+    public const array XS_ANY_ATTR_EXCLUSIONS = [
         [null, 'Digest'],
         [null, 'DigestAlgorithm'],
         [null, 'URI'],
@@ -93,7 +93,6 @@ final class PolicyReference extends AbstractWspElement implements SchemaValidata
      * Convert XML into an wsp:PolicyReference element
      *
      * @param \DOMElement $xml The XML element we should load
-     * @return static
      *
      * @throws \SimpleSAML\XMLSchema\Exception\InvalidDOMElementException
      *   If the qualified name of the supplied element is wrong
@@ -117,7 +116,6 @@ final class PolicyReference extends AbstractWspElement implements SchemaValidata
      * Convert this wsp:PolicyReference to XML.
      *
      * @param \DOMElement|null $parent The element we should add this wsp:Policy to
-     * @return \DOMElement This wsp:PolicyReference element.
      */
     public function toXML(?DOMElement $parent = null): DOMElement
     {

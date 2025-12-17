@@ -15,16 +15,12 @@ trait OptionalTrait
 {
     /**
      * The Optional.
-     *
-     * @var bool
      */
     protected bool $Optional;
 
 
     /**
      * Collect the value of the Optional-property
-     *
-     * @return bool
      */
     public function getOptional(): bool
     {
@@ -34,8 +30,6 @@ trait OptionalTrait
 
     /**
      * Set the value of the Optional-property
-     *
-     * @param bool $Optional
      */
     protected function setOptional(?bool $Optional): void
     {

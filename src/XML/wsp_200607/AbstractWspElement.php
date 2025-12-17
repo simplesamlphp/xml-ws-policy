@@ -14,12 +14,9 @@ use SimpleSAML\XML\AbstractElement;
  */
 abstract class AbstractWspElement extends AbstractElement
 {
-    /** @var string */
-    public const NS = C::NS_POLICY_200607;
+    public const string NS = C::NS_POLICY_200607;
 
-    /** @var string */
-    public const NS_PREFIX = 'wsp';
+    public const string NS_PREFIX = 'wsp';
 
-    /** @var string */
-    public const SCHEMA = 'resources/schemas/ws-policy-200607.xsd';
+    public const string SCHEMA = 'resources/schemas/ws-policy-200607.xsd';
 }
