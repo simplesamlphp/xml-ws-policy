@@ -25,11 +25,10 @@ abstract class AbstractURI extends AbstractWspElement
     use TypedTextContentTrait;
 
 
-    /** @var string */
-    public const TEXTCONTENT_TYPE = AnyURIValue::class;
+    public const string TEXTCONTENT_TYPE = AnyURIValue::class;
 
     /** The namespace-attribute for the xs:anyAttribute element */
-    public const XS_ANY_ATTR_NAMESPACE = NS::ANY;
+    public const string XS_ANY_ATTR_NAMESPACE = NS::ANY;
 
 
     /**
@@ -51,7 +50,6 @@ abstract class AbstractURI extends AbstractWspElement
      * Convert XML into an wsp:URI type element
      *
      * @param \DOMElement $xml The XML element we should load
-     * @return static
      *
      * @throws \SimpleSAML\XMLSchema\Exception\InvalidDOMElementException
      *   If the qualified name of the supplied element is wrong
@@ -72,7 +70,6 @@ abstract class AbstractURI extends AbstractWspElement
      * Convert this wsp:URI type to XML.
      *
      * @param \DOMElement|null $parent The element we should add this wsp:URI to.
-     * @return \DOMElement This wsp:URI type element.
      */
     public function toXML(?DOMElement $parent = null): DOMElement
     {

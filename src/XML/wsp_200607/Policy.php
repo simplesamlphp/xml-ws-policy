@@ -27,15 +27,15 @@ final class Policy extends AbstractOperatorContentType implements SchemaValidata
 
 
     /** The namespace-attribute for the xs:anyAttribute element */
-    public const XS_ANY_ATTR_NAMESPACE = NS::ANY;
+    public const string XS_ANY_ATTR_NAMESPACE = NS::ANY;
 
     /** The exclusions for the xs:anyAttribute element */
-    public const XS_ANY_ATTR_EXCLUSIONS = [
+    public const array XS_ANY_ATTR_EXCLUSIONS = [
         ['http://www.w3.org/2006/07/ws-policy', 'Name'],
     ];
 
     /** The exclusions for the xs:any element */
-    public const XS_ANY_ELT_EXCLUSIONS = [
+    public const array XS_ANY_ELT_EXCLUSIONS = [
         ['http://schemas.xmlsoap.org/ws/2004/09/policy', 'All'],
         ['http://schemas.xmlsoap.org/ws/2004/09/policy', 'ExactlyOne'],
         ['http://schemas.xmlsoap.org/ws/2004/09/policy', 'Policy'],
@@ -78,8 +78,6 @@ final class Policy extends AbstractOperatorContentType implements SchemaValidata
 
     /**
      * Test if an object, at the state it's in, would produce an empty XML-element
-     *
-     * @return bool
      */
     final public function isEmptyElement(): bool
     {
@@ -93,7 +91,6 @@ final class Policy extends AbstractOperatorContentType implements SchemaValidata
      * Convert XML into an wsp:Policy element
      *
      * @param \DOMElement $xml The XML element we should load
-     * @return static
      *
      * @throws \SimpleSAML\XMLSchema\Exception\InvalidDOMElementException
      *   If the qualified name of the supplied element is wrong
@@ -122,7 +119,6 @@ final class Policy extends AbstractOperatorContentType implements SchemaValidata
      * Convert this wsp:Policy to XML.
      *
      * @param \DOMElement|null $parent The element we should add this wsp:Policy to
-     * @return \DOMElement This wsp:Policy element.
      */
     public function toXML(?DOMElement $parent = null): DOMElement
     {

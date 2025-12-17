@@ -31,10 +31,10 @@ final class PolicyAttachment extends AbstractWspElement implements SchemaValidat
 
 
     /** The namespace-attribute for the xs:any element */
-    public const XS_ANY_ELT_NAMESPACE = NS::OTHER;
+    public const string XS_ANY_ELT_NAMESPACE = NS::OTHER;
 
     /** The namespace-attribute for the xs:anyAttribute element */
-    public const XS_ANY_ATTR_NAMESPACE = NS::ANY;
+    public const string XS_ANY_ATTR_NAMESPACE = NS::ANY;
 
 
     /**
@@ -94,7 +94,6 @@ final class PolicyAttachment extends AbstractWspElement implements SchemaValidat
      * Convert XML into an wsp:PolicyAttachment element
      *
      * @param \DOMElement $xml The XML element we should load
-     * @return static
      *
      * @throws \SimpleSAML\XMLSchema\Exception\InvalidDOMElementException
      *   If the qualified name of the supplied element is wrong
@@ -127,7 +126,6 @@ final class PolicyAttachment extends AbstractWspElement implements SchemaValidat
      * Convert this wsp:PolicyAttachment to XML.
      *
      * @param \DOMElement|null $parent The element we should add this wsp:AppliesTo to.
-     * @return \DOMElement This wsp:AppliesTo element.
      */
     public function toXML(?DOMElement $parent = null): DOMElement
     {
