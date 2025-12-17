@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "ext-dom": "*",
         "ext-spl": "*",
 
@@ -19,7 +19,7 @@
         "simplesamlphp/xml-wss-core": "~1.1"
     },
     "require-dev": {
-        "simplesamlphp/simplesamlphp-test-framework": "~1.10",
+        "simplesamlphp/simplesamlphp-test-framework": "~1.11",
         "simplesamlphp/xml-ws-addressing": "~1.1"
     },
     "autoload": {
