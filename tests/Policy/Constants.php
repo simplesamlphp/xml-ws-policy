@@ -11,5 +11,5 @@ namespace SimpleSAML\Test\WebServices\Policy;
  */
 class Constants extends \SimpleSAML\WebServices\Policy\Constants
 {
-    public const NAMESPACE = 'urn:x-simplesamlphp:namespace';
+    public const string NAMESPACE = 'urn:x-simplesamlphp:namespace';
 }

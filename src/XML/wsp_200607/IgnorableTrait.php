@@ -15,16 +15,12 @@ trait IgnorableTrait
 {
     /**
      * The Ignorable.
-     *
-     * @var bool
      */
     protected bool $Ignorable;
 
 
     /**
      * Collect the value of the Ignorable-property
-     *
-     * @return bool
      */
     public function getIgnorable(): bool
     {
@@ -34,8 +30,6 @@ trait IgnorableTrait
 
     /**
      * Set the value of the Ignorable-property
-     *
-     * @param bool $Ignorable
      */
     protected function setIgnorable(?bool $Ignorable): void
     {

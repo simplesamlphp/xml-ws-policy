@@ -26,10 +26,10 @@ abstract class AbstractOperatorContentType extends AbstractWspElement
 
 
     /** The namespace-attribute for the xs:any element */
-    public const XS_ANY_ELT_NAMESPACE = NS::OTHER;
+    public const string XS_ANY_ELT_NAMESPACE = NS::OTHER;
 
     /** The exclusions for the xs:any element */
-    public const XS_ANY_ELT_EXCLUSIONS = [
+    public const array XS_ANY_ELT_EXCLUSIONS = [
         ['http://schemas.xmlsoap.org/ws/2004/09/policy', 'All'],
         ['http://schemas.xmlsoap.org/ws/2004/09/policy', 'ExactlyOne'],
         ['http://schemas.xmlsoap.org/ws/2004/09/policy', 'Policy'],
@@ -82,8 +82,6 @@ abstract class AbstractOperatorContentType extends AbstractWspElement
 
     /**
      * Test if an object, at the state it's in, would produce an empty XML-element
-     *
-     * @return bool
      */
     public function isEmptyElement(): bool
     {
@@ -96,7 +94,6 @@ abstract class AbstractOperatorContentType extends AbstractWspElement
      * Convert XML into an wsp:OperatorContentType element
      *
      * @param \DOMElement $xml The XML element we should load
-     * @return static
      *
      * @throws \SimpleSAML\XMLSchema\Exception\InvalidDOMElementException
      *   If the qualified name of the supplied element is wrong
@@ -122,7 +119,6 @@ abstract class AbstractOperatorContentType extends AbstractWspElement
      * Convert this wsp:OperatorContentType to XML.
      *
      * @param \DOMElement|null $parent The element we should add this wsp:OperatorContentType to.
-     * @return \DOMElement This wsp:AbstractOperatorContentType element.
      */
     public function toXML(?DOMElement $parent = null): DOMElement
     {
