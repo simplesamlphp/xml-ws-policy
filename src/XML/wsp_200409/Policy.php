@@ -8,6 +8,7 @@ use DOMElement;
 use SimpleSAML\WebServices\Policy\Assert\Assert;
 use SimpleSAML\WebServices\Policy\Constants as C;
 use SimpleSAML\WebServices\Security\Type\IDValue;
+use SimpleSAML\WebServices\Security\XML\IDTrait;
 use SimpleSAML\XML\ExtendableAttributesTrait;
 use SimpleSAML\XML\SchemaValidatableElementInterface;
 use SimpleSAML\XML\SchemaValidatableElementTrait;
@@ -25,6 +26,7 @@ use function array_merge;
 final class Policy extends AbstractOperatorContentType implements SchemaValidatableElementInterface
 {
     use ExtendableAttributesTrait;
+    use IDTrait;
     use SchemaValidatableElementTrait;
 
 
@@ -63,21 +65,12 @@ final class Policy extends AbstractOperatorContentType implements SchemaValidata
         array $operatorContent = [],
         array $children = [],
         protected ?AnyURIValue $Name = null,
-        protected ?IDValue $Id = null,
+        ?IDValue $Id = null,
         array $namespacedAttributes = [],
     ) {
         $this->setAttributesNS($namespacedAttributes);
 
         parent::__construct($operatorContent, $children);
-    }
-
-
-    /**
-     * @return \SimpleSAML\WebServices\Security\Type\IDValue|null
-     */
-    public function getId(): ?IDValue
-    {
-        return $this->Id;
     }
 
 
