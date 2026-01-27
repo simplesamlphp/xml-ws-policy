@@ -8,7 +8,7 @@ use DOMElement;
 use SimpleSAML\WebServices\Policy\Assert\Assert;
 use SimpleSAML\WebServices\Policy\Constants as C;
 use SimpleSAML\WebServices\Security\Type\IDValue;
-use SimpleSAML\WebServices\Security\XML\IDTrait;
+use SimpleSAML\WebServices\Security\XML\wsu\IDTrait;
 use SimpleSAML\XML\ExtendableAttributesTrait;
 use SimpleSAML\XML\SchemaValidatableElementInterface;
 use SimpleSAML\XML\SchemaValidatableElementTrait;
@@ -68,6 +68,7 @@ final class Policy extends AbstractOperatorContentType implements SchemaValidata
         ?IDValue $Id = null,
         array $namespacedAttributes = [],
     ) {
+        $this->setId($Id);
         $this->setAttributesNS($namespacedAttributes);
 
         parent::__construct($operatorContent, $children);

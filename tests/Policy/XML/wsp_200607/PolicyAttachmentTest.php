@@ -72,9 +72,11 @@ final class PolicyAttachmentTest extends TestCase
         $some = new Chunk(DOMDocumentFactory::fromString(
             '<ssp:Chunk xmlns:ssp="urn:x-simplesamlphp:namespace">Some</ssp:Chunk>',
         )->documentElement);
+
         $other = new Chunk(DOMDocumentFactory::fromString(
             '<ssp:Chunk xmlns:ssp="urn:x-simplesamlphp:namespace">Other</ssp:Chunk>',
         )->documentElement);
+
         $sec = new Chunk(DOMDocumentFactory::fromString(
             '<ssp:Chunk xmlns:ssp="urn:x-simplesamlphp:namespace">Security</ssp:Chunk>',
         )->documentElement);
@@ -82,9 +84,7 @@ final class PolicyAttachmentTest extends TestCase
         $appliesTo = new AppliesTo(
             [
                 new EndpointReference(
-                    new Address(
-                        AnyURIValue::fromString('http://www.fabrikam123.example.com/acct'),
-                    ),
+                    Address::fromString('http://www.fabrikam123.example.com/acct'),
                 ),
             ],
             [$attr2],

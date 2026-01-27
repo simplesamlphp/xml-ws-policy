@@ -15,12 +15,12 @@
         "ext-spl": "*",
 
         "simplesamlphp/assert": "~1.9",
-        "simplesamlphp/xml-common": "~2.5",
-        "simplesamlphp/xml-wss-core": "~1.2"
+        "simplesamlphp/xml-common": "~2.6",
+        "simplesamlphp/xml-wss-core": "~1.3"
     },
     "require-dev": {
         "simplesamlphp/simplesamlphp-test-framework": "~1.11",
-        "simplesamlphp/xml-ws-addressing": "~1.1"
+        "simplesamlphp/xml-ws-addressing": "~1.2"
     },
     "autoload": {
         "psr-4": {
@@ -34,7 +34,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "v1.0.x-dev"
+            "dev-master": "v1.3.x-dev"
         }
     },
     "config": {

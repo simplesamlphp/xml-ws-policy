@@ -15,7 +15,6 @@ use SimpleSAML\XML\Attribute;
 use SimpleSAML\XML\DOMDocumentFactory;
 use SimpleSAML\XML\TestUtils\SchemaValidationTestTrait;
 use SimpleSAML\XML\TestUtils\SerializableElementTestTrait;
-use SimpleSAML\XMLSchema\Type\AnyURIValue;
 use SimpleSAML\XMLSchema\Type\StringValue;
 
 use function dirname;
@@ -56,9 +55,7 @@ final class AppliesToTest extends TestCase
         $AppliesTo = new AppliesTo(
             [
                 new EndpointReference(
-                    new Address(
-                        AnyURIValue::fromString('http://www.fabrikam123.example.com/acct'),
-                    ),
+                    Address::fromString('http://www.fabrikam123.example.com/acct'),
                 ),
             ],
             [$domAttr],
