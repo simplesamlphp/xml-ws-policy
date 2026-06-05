@@ -60,9 +60,10 @@ final class URITest extends TestCase
 
         $uri = new URI(AnyURIValue::fromString('urn:x-simplesamlphp:namespace'), [$attr]);
 
-        $this->assertEquals(
-            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($uri),
-        );
+        $expectedXml = self::$xmlRepresentation->saveXml(self::$xmlRepresentation->documentElement);
+        $this->assertNotFalse($expectedXml);
+        $actualXml = strval($uri);
+
+        $this->assertXmlStringEqualsXmlString($expectedXml, $actualXml);
     }
 }

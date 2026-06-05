@@ -52,7 +52,7 @@ final class AppliesToTest extends TestCase
     {
         $domAttr = new Attribute('urn:x-simplesamlphp:namespace', 'ssp', 'attr1', StringValue::fromString('value1'));
 
-        $AppliesTo = new AppliesTo(
+        $appliesTo = new AppliesTo(
             [
                 new EndpointReference(
                     Address::fromString('http://www.fabrikam123.example.com/acct'),
@@ -60,12 +60,13 @@ final class AppliesToTest extends TestCase
             ],
             [$domAttr],
         );
-        $this->assertFalse($AppliesTo->isEmptyElement());
+        $this->assertFalse($appliesTo->isEmptyElement());
 
-        $this->assertEquals(
-            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($AppliesTo),
-        );
+        $expectedXml = self::$xmlRepresentation->saveXml(self::$xmlRepresentation->documentElement);
+        $this->assertNotFalse($expectedXml);
+        $actualXml = strval($appliesTo);
+
+        $this->assertXmlStringEqualsXmlString($expectedXml, $actualXml);
     }
 
 

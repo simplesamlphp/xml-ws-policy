@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SimpleSAML\WebServices\Policy\XML\wsp_200409;
 
-use DOMElement;
+use Dom;
 use SimpleSAML\WebServices\Policy\Assert\Assert;
 use SimpleSAML\XML\ExtendableAttributesTrait;
 use SimpleSAML\XML\ExtendableElementTrait;
@@ -57,12 +57,12 @@ final class AppliesTo extends AbstractWspElement implements SchemaValidatableEle
     /*
      * Convert XML into an wsp:AppliesTo element
      *
-     * @param \DOMElement $xml The XML element we should load
+     * @param \Dom\Element $xml The XML element we should load
      *
      * @throws \SimpleSAML\XMLSchema\Exception\InvalidDOMElementException
      *   If the qualified name of the supplied element is wrong
      */
-    public static function fromXML(DOMElement $xml): static
+    public static function fromXML(Dom\Element $xml): static
     {
         Assert::same($xml->localName, 'AppliesTo', InvalidDOMElementException::class);
         Assert::same($xml->namespaceURI, AppliesTo::NS, InvalidDOMElementException::class);
@@ -77,9 +77,9 @@ final class AppliesTo extends AbstractWspElement implements SchemaValidatableEle
     /**
      * Convert this wsp:AppliesTo to XML.
      *
-     * @param \DOMElement|null $parent The element we should add this wsp:AppliesTo to.
+     * @param \Dom\Element|null $parent The element we should add this wsp:AppliesTo to.
      */
-    public function toXML(?DOMElement $parent = null): DOMElement
+    public function toXML(?Dom\Element $parent = null): Dom\Element
     {
         $e = $this->instantiateParentElement($parent);
 

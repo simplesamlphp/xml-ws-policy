@@ -67,10 +67,11 @@ final class PolicyTest extends TestCase
 
         $this->assertFalse($policy->isEmptyElement());
 
-        $this->assertEquals(
-            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($policy),
-        );
+        $expectedXml = self::$xmlRepresentation->saveXml(self::$xmlRepresentation->documentElement);
+        $this->assertNotFalse($expectedXml);
+        $actualXml = strval($policy);
+
+        $this->assertXmlStringEqualsXmlString($expectedXml, $actualXml);
     }
 
 

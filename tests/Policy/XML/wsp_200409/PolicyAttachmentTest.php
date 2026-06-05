@@ -105,9 +105,10 @@ final class PolicyAttachmentTest extends TestCase
 
         $policyAttachment = new PolicyAttachment($appliesTo, [$policy, $policyReference], [$security, $some], [$attr1]);
 
-        $this->assertEquals(
-            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($policyAttachment),
-        );
+        $expectedXml = self::$xmlRepresentation->saveXml(self::$xmlRepresentation->documentElement);
+        $this->assertNotFalse($expectedXml);
+        $actualXml = strval($policyAttachment);
+
+        $this->assertXmlStringEqualsXmlString($expectedXml, $actualXml);
     }
 }
