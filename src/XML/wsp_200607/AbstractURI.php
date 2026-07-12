@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SimpleSAML\WebServices\Policy\XML\wsp_200607;
 
-use Dom\Element;
+use Dom;
 use SimpleSAML\WebServices\Policy\Assert\Assert;
 use SimpleSAML\XML\ExtendableAttributesTrait;
 use SimpleSAML\XML\TypedTextContentTrait;
