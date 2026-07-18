@@ -62,10 +62,11 @@ final class ExactlyOneTest extends TestCase
 
         $this->assertFalse($exactlyOne->isEmptyElement());
 
-        $this->assertEquals(
-            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($exactlyOne),
-        );
+        $expectedXml = self::$xmlRepresentation->saveXml(self::$xmlRepresentation->documentElement);
+        $this->assertNotFalse($expectedXml);
+        $actualXml = strval($exactlyOne);
+
+        $this->assertXmlStringEqualsXmlString($expectedXml, $actualXml);
     }
 
 

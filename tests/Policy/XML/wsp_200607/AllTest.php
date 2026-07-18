@@ -62,10 +62,11 @@ final class AllTest extends TestCase
 
         $this->assertFalse($all->isEmptyElement());
 
-        $this->assertEquals(
-            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($all),
-        );
+        $expectedXml = self::$xmlRepresentation->saveXml(self::$xmlRepresentation->documentElement);
+        $this->assertNotFalse($expectedXml);
+        $actualXml = strval($all);
+
+        $this->assertXmlStringEqualsXmlString($expectedXml, $actualXml);
     }
 
 
