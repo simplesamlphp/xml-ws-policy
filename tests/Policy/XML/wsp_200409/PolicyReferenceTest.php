@@ -57,16 +57,17 @@ final class PolicyReferenceTest extends TestCase
     {
         $attr = new XMLAttribute(C::NAMESPACE, 'ssp', 'attr1', StringValue::fromString('testval1'));
 
-        $pr = new PolicyReference(
+        $policyReference = new PolicyReference(
             AnyURIValue::fromString('urn:x-simplesamlphp:phpunit'),
             Base64BinaryValue::fromString('/CTj03d1DB5e2t7CTo9BEzCf5S9NRzwnBgZRlm32REI='),
             AnyURIValue::fromString('http://schemas.xmlsoap.org/ws/2004/09/policy/Sha1Exc'),
             [$attr],
         );
 
-        $this->assertEquals(
-            self::$xmlRepresentation->saveXML(self::$xmlRepresentation->documentElement),
-            strval($pr),
-        );
+        $expectedXml = self::$xmlRepresentation->saveXml(self::$xmlRepresentation->documentElement);
+        $this->assertNotFalse($expectedXml);
+        $actualXml = strval($policyReference);
+
+        $this->assertXmlStringEqualsXmlString($expectedXml, $actualXml);
     }
 }
